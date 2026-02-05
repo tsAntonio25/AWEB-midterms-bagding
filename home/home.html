@@ -1,0 +1,20 @@
+<div class="container">
+  <p class="time">
+    Time Now: {{ time$ | async | date:'mediumTime' }}
+  </p>
+
+  <h1>Welcome</h1>
+  <p class="intro">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed lacinia eros.
+    Morbi vulputate velit vel interdum vulputate. Nullam eu vulputate felis.
+  </p>
+
+  <h2>Latest Updates</h2>
+
+  @for (post of httpposts | slice:0:5; track post.id) {
+    <div class="post">
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.body }}</p>
+    </div>
+  }
+</div>
